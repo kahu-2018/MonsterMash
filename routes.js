@@ -7,13 +7,13 @@ var bodyParser = require('body-parser')
 
 router.get('/', function (req, res) {
 
-  res.render('home')
     var db= req.app.get('db')
     db('monsters')
     .then(monsters => {
         db('cities')
             .then(cities => {
                 res.render('home', {monsters, cities})
+
             })
     })
     .catch(err => res.send("RAWR, an error!", err))
