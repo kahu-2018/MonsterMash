@@ -1,5 +1,8 @@
 const express = require('express')
 const router = express.Router()
+var environment = process.env.NODE_ENV || 'development'
+var config = require('./knexfile')[environment]
+var db = require('knex')(config)
 var bodyParser = require('body-parser')
 
 router.get('/', function (req, res) {
