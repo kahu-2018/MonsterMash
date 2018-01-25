@@ -22,7 +22,8 @@ app.use(express.static('public'))
 app.use('/', routes)
 
 // Send back a creator function which links a db with the app so that it is testable
-module.exports = function (db) {
-  app.set('db', db)
-  return app
-}
+
+// module.exports = function (db) {
+//   app.set('db', db)
+//   return app
+// }
