@@ -37,12 +37,12 @@ router.get('/profiles/:id', (req, res) => {
   db('monsters')
     .select()
 
+
     // .join('cities', 'monsters.id', '=', 'cities.monster_id')
     .where('monsters.id', id)
     .first()
     .then((monster) => {
       // monster = {monster:"hello", img:"monster-moo.png", description:"scary"}
-      console.log(monster)
       res.render('profiles', monster)
     })
     // .catch((err) => {
@@ -50,6 +50,22 @@ router.get('/profiles/:id', (req, res) => {
     // })
 })
 
+router.get('/cities/:id', (req, res) => {
+  var db = req.app.get('db')
+  var id = req.params.id
+  db('cities')
+    .select()
+    .join('monsters')
+    .where('cities.id', id)
+    .first()
+    .then((city) => {
+      //city['destroyed']
+      res.render('city', city)
+    })
+    .catch((err) => {
+      res.send("Cities have taken control of the monsters")
+    })
+})
 
 
 module.exports = router
