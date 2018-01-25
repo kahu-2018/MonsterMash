@@ -36,15 +36,15 @@ router.get('/profiles/:id', (req, res) => {
   
   db('monsters')
     .select()
-    // .join('cities', 'monsters.id', '=', 'cities.destroyed')
-    // .where('monsters.id', id)
-    // console.log('this is the ID:', monsters)
 
-    // .first()
-    // .then(data => {
-    //   // monster = {monster:"hello", img:"monster-moo.png", description:"scary"}
-      res.render('profiles')
-    // })
+    // .join('cities', 'monsters.id', '=', 'cities.monster_id')
+    .where('monsters.id', id)
+    .first()
+    .then((monster) => {
+      // monster = {monster:"hello", img:"monster-moo.png", description:"scary"}
+      console.log(monster)
+      res.render('profiles', monster)
+    })
     // .catch((err) => {
     //   res.send("Monsters have taken control of the server")
     // })
