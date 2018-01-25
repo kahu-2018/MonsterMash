@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.integer('destroyed')
     table.string('city_img')
     table.integer('monster_id')
+  })
 };
 
 exports.down = function(knex, Promise) {
