@@ -1,0 +1,28 @@
+<head>
+  <title>MonsterSmash</title>
+</head>
+
+<body>
+
+<h1>Welcome to MonsterSmash!</h1>
+<br/>
+
+<h3>Monsters</h3>
+{{#each monsters}}
+<ul>
+<li> <a href="profiles/:id">{{monster}}</a>
+</ul>
+{{/each}}
+
+<br/>
+<h3>Cities</h3>
+{{#each cities}}
+<ul>
+<li> <a href="profiles/:id">{{city}}</a>
+</ul>
+{{/each}}
+<br/>
+<a href="/attack">Attack</a>
+
+
+</body>
