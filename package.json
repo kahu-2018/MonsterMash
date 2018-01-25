@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index",
     "test": "jest --watch --noStackTrace",
+    "dev": "nodemon index",
     "knex": "knex"
   },
   "repository": "https://github.com/kahu-2018/MonsterSmash.git",
@@ -25,5 +26,5 @@
     "nodemon": "^1.14.11",
     "supertest": "^3.0.0"
   }
-  
+
 }
