@@ -5,16 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "test": "jest --watch --noStackTrace"
+    "test": "jest --watch --noStackTrace",
+    "knex": "knex"
   },
   "repository": "https://github.com/kahu-2018/MonsterSmash.git",
   "author": "Monstersmash",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.16.2",
-    "node": "^9.4.0"
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.14.2",
+    "node": "^9.4.0",
+    "sqlite3": "^3.1.13"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+    "cheerio": "^1.0.0-rc.2",
+    "jest": "^22.1.4",
+    "nodemon": "^1.14.11",
+    "supertest": "^3.0.0"
   }
 }
