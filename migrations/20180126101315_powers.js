@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTableIfNotExists('cities', function (table) {
+  return knex.schema.createTableIfNotExists('powers', function (table) {
     table.increments()
     table.string('power')
     table.integer('monster_id')
