@@ -1,0 +1,20 @@
+{
+  "name": "Monster-Smash",
+  "version": "1.0.0",
+  "description": "All about monsters conquering the world",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "jest --watch --noStackTrace"
+  },
+  "repository": "https://github.com/kahu-2018/MonsterSmash.git",
+  "author": "Monstersmash",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node": "^9.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
