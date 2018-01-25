@@ -25,16 +25,17 @@ router.get('/profiles/:id', (req, res) => {
   var id = req.params.id
   db('monsters')
     .select()
-    .join('cities', 'monsters.id', '=', 'cities.monster_id')
-    .where('monsters.id', 'id')
+    // .join('cities', 'monsters.id', '=', 'cities.monster_id')
+    .where('monsters.id', id)
     .first()
     .then((monster) => {
       // monster = {monster:"hello", img:"monster-moo.png", description:"scary"}
+      console.log(monster)
       res.render('profiles', monster)
     })
-    .catch((err) => {
-      res.send("Monsters have taken control of the server")
-    })
+    // .catch((err) => {
+    //   res.send("Monsters have taken control of the server")
+    // })
 })
 
 module.exports = router
