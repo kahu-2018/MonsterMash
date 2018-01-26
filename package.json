@@ -3,28 +3,35 @@
   "version": "1.0.0",
   "description": "All about monsters conquering the world",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "start": "node index",
     "test": "jest --watch --noStackTrace",
     "dev": "nodemon index",
-    "knex": "knex"
+    "knex": "knex",
+    "postinstall": "knex migrate:latest"
   },
   "repository": "https://github.com/kahu-2018/MonsterSmash.git",
   "author": "MonsterSmash",
   "license": "ISC",
+
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
+    "heroku": "^0.2.0",
     "knex": "^0.14.2",
     "node": "^9.4.0",
+    "pg": "^7.4.1",
     "sqlite3": "^3.1.13"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "node": "^9.4.0"
   }
-
 }
