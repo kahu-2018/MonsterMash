@@ -1,30 +1,24 @@
-<head>
-  <title>MonsterSmash</title>
-</head>
-
-<body>
-
 <h1>Welcome to MonsterSmash!</h1>
 <br/>
 
 <div class=container>
-<h3>Monsters</h3>
-<br\>
-{{#each monsters}}
-<ul>
-<li> <a href="profiles/{{id}}">{{monster}}</a>
-</ul>
-{{/each}}
+  <h3>Monsters</h3>
+    <ul>
+    {{#each monsters}}
+    <li> <a href="profiles/{{id}}">{{monster}}</a>
+    {{/each}}
+    </ul>
 </div>
-<br/>
-<div class=container>
 
-<h3>Cities</h3>
-{{#each cities}}
-<ul>
-<li> <a href="cities/{{id}}">{{city}}</a>
-</ul>
-{{/each}}
+<br/>
+
+<div class=container>
+  <h3>Cities</h3>
+  <ul>
+  {{#each cities}}
+  <li> <a href="cities/{{id}}">{{city}}</a>
+  {{/each}}
+  </ul>
 </div>
 
 <br/>
