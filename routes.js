@@ -6,7 +6,7 @@ var db = require('knex')(config)
 var bodyParser = require('body-parser')
 
 router.get('/', function (req, res) {
-    var db= req.app.get('db')
+    var db = req.app.get('db')
     db('monsters')
     .then(monsters => {
         db('cities')
@@ -19,14 +19,40 @@ router.get('/', function (req, res) {
 
 router.get('/attack', (req, res) => {
     var db = req.app.get('db')
-
+    var baseUrl = req.path
     db('monsters')
     .then(monsters => {
         db('cities')
         .then (cities => {
-            res.render('attack', { monsters, cities })
+            res.render('attack', { monsters, cities, baseUrl})
         })
     })
+})
+
+
+router.get('/attack/:monsterid', (req, res) => {
+    var db = req.app.get('db')
+    var baseUrl = req.path
+    db('monsters')
+    .then(monsters => {
+        db('cities')
+        .then (cities => {
+            res.render('attack', { monsters, cities, baseUrl})
+        })
+    })
+})
+
+router.get('/attack/:monsterid/:cityid', (req, res) => {
+    res.render('result')
+})
+
+router.post('/attack/:monsterid/:cityid', (req, res) => {
+    var db = req.app.get('db')
+    var cityId = req.params.city-id
+    var monsterId = req.params.monster-id
+    db('cities')
+    .where('id', cityId)
+    .update('destroyed', monsterId)
 })
 
 
