@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "All about monsters conquering the world",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "start": "node index",
     "test": "jest --watch --noStackTrace",
@@ -13,7 +16,7 @@
   "repository": "https://github.com/kahu-2018/MonsterSmash.git",
   "author": "MonsterSmash",
   "license": "ISC",
-  
+
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.16.2",
