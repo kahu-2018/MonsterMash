@@ -4,12 +4,21 @@
 <h1>Choose Your Monster!</h1><br />
 
 {{#each monsters}}
-<a href="{{../baseUrl}}/{{id}}"> <img src="{{monster_img}}"></a><br />
+
+<img class="monsterimg" src="{{monster_img}}"
+
 {{/each}}
 
+<br/>
 <h1>Choose Your City!</h1><br />
 {{#each cities}}
-<a href="{{../baseUrl}}/{{id}}"> <img src="{{city_img}}"></a><br />
+
+<img class="monsterimg" src="{{city_img}}">
+
 {{/each}}
+
+<br />
+
+<br />
 
 <a href="/result">Attack!</a>
