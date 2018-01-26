@@ -60,20 +60,26 @@ router.get('/profiles/:id', (req, res) => {
   var db = req.app.get('db')
   var id = req.params.id
 
-  db('monsters')
+  db('powers')
     .select()
+    // .join('cities', 'monster.id', '=', 'cities.monsters_id')
+    .join('monsters', 'monsters.id', '=', 'powers.monster_id')
+    // .where('monster_id', id)
+    .where('powers.monster_id', id)
+    .then((powers) => {
+      // console.log(powers)
+      monster = powers[0]
+      powers = powers.map((p) => {
+        return p.power
+      })
+      monster.powers = powers
 
 
-    // .join('cities', 'monsters.id', '=', 'cities.monster_id')
-    .where('monsters.id', id)
-    .first()
-    .then((monster) => {
-      // monster = {monster:"hello", img:"monster-moo.png", description:"scary"}
-      res.render('profiles', monster)
+      res.render('profile', monster)
     })
-    // .catch((err) => {
-    //   res.send("Monsters have taken control of the server")
-    // })
+    .catch((err) => {
+      res.send("Monsters have taken control of the server")
+    })
 })
 
 router.get('/cities/:id', (req, res) => {
@@ -85,7 +91,6 @@ router.get('/cities/:id', (req, res) => {
     .where('cities.id', id)
     .first()
     .then((city) => {
-
       if (city.destroyed === 0) {
         destroyed = "up for the taking"
       } else if (city.destroyed === 1) {
