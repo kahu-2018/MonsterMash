@@ -13,6 +13,7 @@
   "repository": "https://github.com/kahu-2018/MonsterSmash.git",
   "author": "MonsterSmash",
   "license": "ISC",
+  
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.16.2",
@@ -27,6 +28,7 @@
     "cheerio": "^1.0.0-rc.2",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "node": "^9.4.0"
   }
 }
