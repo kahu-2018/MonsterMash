@@ -53,6 +53,7 @@ router.post('/attack/:monsterid/:cityid', (req, res) => {
     db('cities')
     .where('id', cityId)
     .update('destroyed', monsterId)
+    console.log('destroyed')
 })
 
 
