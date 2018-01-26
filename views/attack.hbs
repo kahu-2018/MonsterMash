@@ -5,7 +5,7 @@
 
 {{#each monsters}}
 
-<img class="monsterimg" src="{{monster_img}}"
+<a href="{{../baseUrl}}/{{id}}"> <img class="monsterimg" src="{{monster_img}}"></a>
 
 {{/each}}
 
@@ -13,7 +13,7 @@
 <h1>Choose Your City!</h1><br />
 {{#each cities}}
 
-<img class="monsterimg" src="{{city_img}}">
+<a href="{{../baseUrl}}/{{id}}"> <img class="monsterimg" src="{{city_img}}"></a>
 
 {{/each}}
 
