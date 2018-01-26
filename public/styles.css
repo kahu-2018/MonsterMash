@@ -8,6 +8,10 @@ body {
   text-align: center;
 }
 
+.finalimg {
+  width: 50%
+}
+
 .container {
   display: inline-block;
   flex-wrap: wrap;
