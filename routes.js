@@ -82,5 +82,10 @@ router.get('/cities/:id', (req, res) => {
     })
 })
 
+router.get('/result', (req, res) => {
+//var db = req.app.get('db')
+//var id = req.param.id
+res.render('result')
+})
 
 module.exports = router
