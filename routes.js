@@ -33,7 +33,7 @@ router.get('/attack', (req, res) => {
 router.get('/profiles/:id', (req, res) => {
   var db = req.app.get('db')
   var id = req.params.id
-  
+
   db('monsters')
     .select()
 
@@ -59,10 +59,25 @@ router.get('/cities/:id', (req, res) => {
     .where('cities.id', id)
     .first()
     .then((city) => {
-      //city['destroyed']
+
+      if (city.destroyed === 0) {
+        destroyed = "up for the taking"
+      } else if (city.destroyed === 1) {
+        destroyed = "Destroyed by The Blob"
+      } else if (city.destroyed === 2) {
+        destroyed = "Destroyed by Moo"
+      } else if (city.destroyed === 3) {
+        destroyed = "Destroyed by Maiasaura"
+      } else if (city.destroyed === 4) {
+        destroyed = "Destroyed by NickZilla"
+      } else if (city.destroyed === 5) {
+        destroyed = "Destroyed by Puffajess"
+      }
+      city.destroyedMessage = destroyed
       res.render('city', city)
     })
     .catch((err) => {
+      console.log(err)
       res.send("Cities have taken control of the monsters")
     })
 })
